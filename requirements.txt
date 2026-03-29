@@ -1,0 +1,13 @@
+torch>=2.0.0
+torchvision>=0.15.0
+efficientnet-pytorch
+opencv-python
+Pillow
+numpy
+fastapi
+uvicorn
+python-multipart
+grad-cam
+matplotlib
+tqdm
+scikit-learn
