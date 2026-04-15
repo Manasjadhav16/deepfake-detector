@@ -28,16 +28,17 @@ import base64
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 def load_model():
+    import os
+
     model = models.efficientnet_b4(weights=None)
     model.classifier[1] = nn.Linear(model.classifier[1].in_features, 2)
 
-    import os
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     model_path = os.path.join(BASE_DIR, 'model', 'best_model.pt')
 
     model.load_state_dict(torch.load(model_path, map_location=device))
-    model.eval()
     model.to(device)
+    model.eval()
 
     return model
 
