@@ -6,7 +6,6 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY src/ ./src/
-COPY src/model/best_model.pt ./src/model/best_model.pt
 
 EXPOSE 7860
 
