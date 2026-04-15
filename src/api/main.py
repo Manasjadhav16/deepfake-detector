@@ -34,7 +34,7 @@ def load_model():
     model.classifier[1] = nn.Linear(model.classifier[1].in_features, 2)
 
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    model_path = os.path.join(BASE_DIR, 'model', 'best_model.pt')
+    model_path = os.path.join(BASE_DIR, 'src', 'model', 'best_model.pt')
 
     model.load_state_dict(torch.load(model_path, map_location=device))
     model.to(device)
